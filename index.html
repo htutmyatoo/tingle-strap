@@ -28,11 +28,11 @@
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 0 20px;
+      padding: 0 10px;
     }
 
     section {
-      padding: 110px 0;
+      padding: 50px 0;
     }
 
     h1 {
@@ -83,51 +83,10 @@
       background: #30363d;
     }
 
-    /* ===== HERO VIDEO BACKGROUND ===== */
+    /* ===== Hero ===== */
     header {
-      position: relative;
-      height: 100vh;
-      min-height: 700px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 180px 20px 180px 20px;
       text-align: center;
-      overflow: hidden;
-    }
-
-    .hero-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 177.77vh;
-      /* 16:9 ratio fix */
-      height: 100vh;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-
-    .hero-video iframe {
-      width: 100%;
-      height: 100%;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(13, 17, 23, 0.75);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 20px;
-    }
-
-    @media (max-aspect-ratio: 16/9) {
-      .hero-video {
-        width: 100vw;
-        height: 56.25vw;
-      }
     }
 
     /* ===== Simulation ===== */
@@ -349,17 +308,9 @@
 
 <body>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===== Hero ===== -->
   <header>
-
-    <div class="hero-video">
-      <iframe src="https://www.youtube.com/embed/s6qzA0gyrh8?autoplay=1&amp;controls=0&amp;start=50;" frameborder="0" allow="autoplay; fullscreen">
-      </iframe>
-    </div>
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content container">
+    <div class="container">
       <h1>Tingle Strap (2022)</h1>
       <p>
         A wearable 360° IoT proximity awareness system engineered with Arduino and ultrasonic sensing.
@@ -374,8 +325,15 @@
         Explore Build Packages
       </a>
     </div>
-
   </header>
+
+  <section>
+    <div class="container">
+      <h2>Developer Soundtrack</h2>
+      <br>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/s6qzA0gyrh8?autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
 
   <!-- ===== Simulation ===== -->
   <section class="simulation">
