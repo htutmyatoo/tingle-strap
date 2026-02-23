@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tingle Strap – Wearable IoT Proximity System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* ===== Global ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 110px 0;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      color: #8b949e;
+      max-width: 750px;
+      margin: 0 auto 20px auto;
+      text-align: center;
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      margin: 10px 8px;
+    }
+
+    .btn-primary {
+      background: #238636;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2ea043;
+    }
+
+    .btn-secondary {
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #e6edf3;
+    }
+
+    .btn-secondary:hover {
+      background: #30363d;
+    }
+
+    /* ===== HERO VIDEO BACKGROUND ===== */
+    header {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 177.77vh;
+      /* 16:9 ratio fix */
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-video iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(13, 17, 23, 0.75);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+      .hero-video {
+        width: 100vw;
+        height: 56.25vw;
+      }
+    }
+
+    /* ===== Simulation ===== */
+    iframe {
+      border: none;
+      border-radius: 16px;
+      width: 100%;
+    }
+
+    .simulation iframe {
+      height: 600px;
+    }
+
+    @media (max-width: 768px) {
+      .simulation iframe {
+        height: 420px;
+      }
+    }
+
+    /* ===== Carousel ===== */
+    .carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 50px auto 0 auto;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .slides iframe {
+      width: 100%;
+      height: 480px;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .slides iframe.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(22, 27, 34, 0.9);
+      border: 1px solid #30363d;
+      color: #e6edf3;
+      font-size: 22px;
+      padding: 12px 16px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .arrow:hover {
+      background: #30363d;
+    }
+
+    .arrow.left {
+      left: 15px;
+    }
+
+    .arrow.right {
+      right: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .slides iframe {
+        height: 300px;
+      }
+    }
+
+    /* ===== Pricing ===== */
+    .pricing-section {
+      background: #0d1117;
+    }
+
+    .pricing-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .pricing-card {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 18px;
+      padding: 40px 30px;
+      width: 320px;
+      transition: 0.3s;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: #58a6ff;
+    }
+
+    .price {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .feature-list li {
+      margin-bottom: 10px;
+      color: #8b949e;
+    }
+
+    .card-student {
+      border: 2px solid #58a6ff;
+      position: relative;
+    }
+
+    .most-popular {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: #58a6ff;
+      color: #0d1117;
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #161b22;
+      padding: 50px 20px 10px 20px;
+      text-align: center;
+    }
+
+    .social-links {
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      margin: 0 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .github {
+      color: #58a6ff;
+    }
+
+    .linkedin {
+      color: #0a66c2;
+    }
+
+    .facebook {
+      color: #1877f2;
+    }
+
+    .instagram {
+      color: #e1306c;
+    }
+
+    /* ===== Modal ===== */
+    #formModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      width: 95%;
+      max-width: 700px;
+      background: #161b22;
+      padding: 20px;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .modal-content button {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* ===== Ko-fi Floating ===== */
+    .kofi-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff5f5f;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+      transition: 0.3s;
+    }
+
+    .kofi-button:hover {
+      background: #ff7676;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HERO ===== -->
+  <header>
+
+    <div class="hero-video">
+      <iframe src="https://www.youtube.com/embed/s6qzA0gyrh8?autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen">
+      </iframe>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content container">
+      <h1>Tingle Strap (2022)</h1>
+      <p>
+        A wearable 360° IoT proximity awareness system engineered with Arduino and ultrasonic sensing.
+        Born during the pandemic. Designed for future spatial intelligence.
+      </p>
+
+      <a href="https://github.com/htutmyatoo/tingle-strap" class="btn btn-secondary">
+        View Open Source Repository
+      </a>
+
+      <a href="#pricing" class="btn btn-primary">
+        Explore Build Packages
+      </a>
+    </div>
+
+  </header>
+
+  <!-- ===== Simulation ===== -->
+  <section class="simulation">
+    <div class="container">
+      <h2>Live Firmware Simulation</h2>
+      <p>Interact with the embedded logic directly in your browser.</p>
+      <br>
+
+      <iframe src="https://wokwi.com/projects/454148586955730945/embed"></iframe>
+    </div>
+  </section>
+
+  <!-- ===== Carousel ===== -->
+  <section>
+    <div class="container">
+      <h2>Engineering Walkthrough & Testing</h2>
+      <p>See how the firmware operates and how the wearable prototype performs in real-world testing.</p>
+
+      <div class="carousel">
+        <div class="slides">
+          <iframe src="https://drive.google.com/file/d/1P587zRdmy67-6qMep9f_vdfuVsPOoSis/preview" allowfullscreen></iframe>
+          <iframe src="https://drive.google.com/file/d/1fSf-MlVZdEnEsnGlV9jHX4hG-HUbMbXZ/preview" allowfullscreen></iframe>
+        </div>
+
+        <button class="arrow left" onclick="prevSlide()">❮</button>
+        <button class="arrow right" onclick="nextSlide()">❯</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Pricing ===== -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <h2>Choose Your Build Package</h2>
+      <p>Select the version that matches your goal.</p>
+
+      <div class="pricing-container">
+
+        <div class="pricing-card">
+          <h3>Community Edition</h3>
+          <div class="price">Free</div>
+          <ul class="feature-list">
+            <li>✔ Basic Firmware</li>
+            <li>✔ Wiring Guide</li>
+            <li>✔ Simulation Access</li>
+            <li>✔ Apache 2.0 License</li>
+          </ul>
+          <a href="https://github.com/htutmyatoo/tingle-strap" class="btn btn-secondary">Access on GitHub</a>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Builder Bundle</h3>
+          <div class="price">£9</div>
+          <ul class="feature-list">
+            <li>✔ Optimized Firmware</li>
+            <li>✔ Power Management</li>
+            <li>✔ Assembly Guide</li>
+            <li>✔ Detailed Schematics</li>
+          </ul>
+          <a href="https://ko-fi.com/yourlink" class="btn btn-primary">Get Builder Bundle</a>
+        </div>
+
+        <div class="pricing-card card-student">
+          <div class="most-popular">MOST POPULAR</div>
+          <h3>Student Academic Bundle</h3>
+          <div class="price">£15</div>
+          <ul class="feature-list">
+            <li>✔ Everything in Builder</li>
+            <li>✔ Research Proposal</li>
+            <li>✔ Full Technical Report</li>
+            <li>✔ Research Paper Draft</li>
+            <li>✔ Presentation Template</li>
+          </ul>
+          <a href="https://ko-fi.com/yourlink" class="btn btn-primary">Get Student Bundle</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      <h2>Wearable IoT Course Waitlist</h2>
+      <p>Join the upcoming deep-dive course on wearable hardware and product-grade firmware architecture.</p>
+
+      <a href="#" onclick="openForm()" class="btn btn-primary">Join the Waitlist</a>
+
+      <div class="social-links">
+        <a href="https://linkedin.com/in/yourprofile" class="linkedin">LinkedIn</a>
+        <a href="https://github.com/yourusername" class="github">GitHub</a>
+        <a href="https://facebook.com/yourprofile" class="facebook">Facebook</a>
+        <a href="https://instagram.com/yourprofile" class="instagram">Instagram</a>
+      </div>
+
+      <p style="margin-top:40px; font-size:0.9rem; color:#8b949e;">
+        © 2026 Htut Myat Oo
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="formModal">
+    <div class="modal-content">
+      <button onclick="closeForm()">✕</button>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScflShXsjHz9H0SKOmUDKdUl0tb3Vt1SSP0ay0VbmiKFW600g/viewform?embedded=true" width="100%" height="500">
+      </iframe>
+    </div>
+  </div>
+
+  <a href="https://ko-fi.com/yourlink" class="kofi-button">☕ Support on Ko-fi</a>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slides iframe");
+    let slideInterval;
+
+    function initCarousel() {
+      slides[currentIndex].classList.add("active");
+      startAutoSlide();
+    }
+
+    function showSlide(index) {
+      slides[currentIndex].classList.remove("active");
+      currentIndex = (index + slides.length) % slides.length;
+      slides[currentIndex].classList.add("active");
+    }
+
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+
+    function startAutoSlide() {
+      slideInterval = setInterval(() => {
+        nextSlide();
+      }, 6000);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(slideInterval);
+    }
+    document.querySelector(".carousel").addEventListener("mouseenter", stopAutoSlide);
+    document.querySelector(".carousel").addEventListener("mouseleave", startAutoSlide);
+
+    function openForm() {
+      document.getElementById("formModal").style.display = "flex";
+    }
+
+    function closeForm() {
+      document.getElementById("formModal").style.display = "none";
+    }
+    initCarousel();
+  </script>
+
+</body>
+
+</html>
