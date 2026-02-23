@@ -53,6 +53,18 @@
       text-align: center;
     }
 
+    /* ===== Scroll Reveal Animation ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ===== Buttons ===== */
     .btn {
       display: inline-block;
@@ -85,8 +97,11 @@
 
     /* ===== Hero ===== */
     header {
-      padding: 180px 20px 180px 20px;
+      position: relative;
+      padding: 180px 20px;
       text-align: center;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 30%, #161b22, #0d1117 70%);
     }
 
     /* ===== Scroll Indicator ===== */
@@ -372,7 +387,7 @@
 <body>
 
   <!-- ===== Hero ===== -->
-  <header>
+  <header class="reveal">
     <div class="container">
       <h1>Tingle Strap (2022)</h1>
       <p>
@@ -396,7 +411,7 @@
     </div>
   </header>
 
-  <section>
+  <section class="reveal">
     <div class="container">
       <h2>Developer Soundtrack</h2>
       <br>
@@ -405,7 +420,7 @@
   </section>
 
   <!-- ===== Simulation ===== -->
-  <section id="simulation" class="simulation">
+  <section id="simulation" class="simulation reveal">
     <div class="container">
       <h2>Live Firmware Simulation</h2>
       <p>Interact with the embedded logic directly in your browser.</p>
@@ -416,7 +431,7 @@
   </section>
 
   <!-- ===== Carousel ===== -->
-  <section>
+  <section class="reveal">
     <div class="container">
       <h2>Engineering Walkthrough & Testing</h2>
       <p>See how the firmware operates and how the wearable prototype performs in real-world testing.</p>
@@ -434,12 +449,12 @@
   </section>
 
   <!-- ===== Pricing ===== -->
-  <section id="pricing" class="pricing-section">
+  <section id="pricing" class="pricing-section reveal">
     <div class="container">
       <h2>Choose Your Build Package</h2>
       <p>Select the version that matches your goal.</p>
 
-      <div class="pricing-container">
+      <div class="pricing-container reveal">
 
         <div class="pricing-card">
           <h3>Community Edition</h3>
@@ -484,7 +499,7 @@
   </section>
 
   <!-- ===== Footer ===== -->
-  <footer>
+  <footer class="reveal">
     <div class="container">
       <h2>Wearable IoT Course Waitlist</h2>
       <p>Join the upcoming deep-dive course on wearable hardware and product-grade firmware architecture.</p>
@@ -513,30 +528,11 @@
     </div>
   </div>
 
-  <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
-  <script>
-    kofiWidgetOverlay.draw('htutmyatoo', {
-      'type': 'floating-chat',
-      'floating-chat.donateButton.text': 'Support me',
-      'floating-chat.donateButton.background-color': '#ff5f5f',
-      'floating-chat.donateButton.text-color': '#fff'
-    });
+  <script type="text/javascript" src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script>
+  <script type="text/javascript">
+    kofiwidget2.init('Buy me a Shawarma', '#ff5f5f', 'J3J21UINNT');
+    kofiwidget2.draw();
   </script>
-
-  <style>
-    /* Position the button on the right */
-    .floatingchat-container-wrap {
-      left: unset !important;
-      right: 16px !important;
-      /* Adjust spacing from right edge */
-    }
-
-    /* Position the popup box on the right */
-    .floating-chat-kofi-popup-iframe {
-      left: unset !important;
-      right: 16px !important;
-    }
-  </style>
 
   <script>
     let currentIndex = 0;
@@ -582,6 +578,26 @@
       document.getElementById("formModal").style.display = "none";
     }
     initCarousel();
+    // ===== Scroll Reveal =====
+    const revealElements = document.querySelectorAll(".reveal");
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 80) {
+          el.classList.add("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+    // ===== Parallax Hero =====
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const hero = document.querySelector("header");
+      hero.style.backgroundPositionY = scrollY * 0.8 + "px";
+    });
   </script>
 
 </body>
