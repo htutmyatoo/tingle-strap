@@ -65,12 +65,12 @@
     }
 
     .btn-primary {
-      background: #238636;
+      background: #d9534f;
       color: white;
     }
 
     .btn-primary:hover {
-      background: #2ea043;
+      background: #ff5f5f;
     }
 
     .btn-secondary {
@@ -87,6 +87,69 @@
     header {
       padding: 180px 20px 180px 20px;
       text-align: center;
+    }
+
+    /* ===== Scroll Indicator ===== */
+    .scroll-indicator {
+      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0.7;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .scroll-indicator span {
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .mouse {
+      width: 26px;
+      height: 42px;
+      border: 2px solid #30363d;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .wheel {
+      width: 4px;
+      height: 8px;
+      background: #58a6ff;
+      border-radius: 4px;
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scrollWheel 1.6s infinite;
+    }
+
+    @keyframes scrollWheel {
+      0% {
+        opacity: 0;
+        top: 8px;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        top: 20px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 0.7;
+      }
     }
 
     /* ===== Simulation ===== */
@@ -147,11 +210,11 @@
     }
 
     .arrow.left {
-      left: 15px;
+      left: 20px;
     }
 
     .arrow.right {
-      right: 15px;
+      right: 20px;
     }
 
     @media (max-width: 768px) {
@@ -184,7 +247,7 @@
 
     .pricing-card:hover {
       transform: translateY(-8px);
-      border-color: #58a6ff;
+      border-color: #ff5f5f;
     }
 
     .price {
@@ -205,7 +268,7 @@
     }
 
     .card-student {
-      border: 2px solid #58a6ff;
+      border: 2px solid #ff5f5f;
       position: relative;
     }
 
@@ -213,8 +276,8 @@
       position: absolute;
       top: -12px;
       right: 20px;
-      background: #58a6ff;
-      color: #0d1117;
+      background: #ff5f5f;
+      color: white;
       padding: 6px 12px;
       font-size: 0.75rem;
       border-radius: 20px;
@@ -325,18 +388,24 @@
         Explore Build Packages
       </a>
     </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
   </header>
 
   <section>
     <div class="container">
       <h2>Developer Soundtrack</h2>
       <br>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/s6qzA0gyrh8?autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/s6qzA0gyrh8?autoplay=1&loop=1&start=50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </section>
 
   <!-- ===== Simulation ===== -->
-  <section class="simulation">
+  <section id="simulation" class="simulation">
     <div class="container">
       <h2>Live Firmware Simulation</h2>
       <p>Interact with the embedded logic directly in your browser.</p>
@@ -423,10 +492,10 @@
       <a href="#" onclick="openForm()" class="btn btn-primary">Join the Waitlist</a>
 
       <div class="social-links">
-        <a href="https://linkedin.com/in/yourprofile" class="linkedin">LinkedIn</a>
-        <a href="https://github.com/yourusername" class="github">GitHub</a>
-        <a href="https://facebook.com/yourprofile" class="facebook">Facebook</a>
-        <a href="https://instagram.com/yourprofile" class="instagram">Instagram</a>
+        <a href="https://linkedin.com/in/htutmyatoo" class="linkedin">LinkedIn</a>
+        <a href="https://github.com/htutmyatoo" class="github">GitHub</a>
+        <a href="https://facebook.com/htutmyatoo.dev" class="facebook">Facebook</a>
+        <a href="https://instagram.com/9teenmine" class="instagram">Instagram</a>
       </div>
 
       <p style="margin-top:40px; font-size:0.9rem; color:#8b949e;">
@@ -444,7 +513,30 @@
     </div>
   </div>
 
-  <a href="https://ko-fi.com/yourlink" class="kofi-button">☕ Support on Ko-fi</a>
+  <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+  <script>
+    kofiWidgetOverlay.draw('htutmyatoo', {
+      'type': 'floating-chat',
+      'floating-chat.donateButton.text': 'Support me',
+      'floating-chat.donateButton.background-color': '#ff5f5f',
+      'floating-chat.donateButton.text-color': '#fff'
+    });
+  </script>
+
+  <style>
+    /* Position the button on the right */
+    .floatingchat-container-wrap {
+      left: unset !important;
+      right: 16px !important;
+      /* Adjust spacing from right edge */
+    }
+
+    /* Position the popup box on the right */
+    .floating-chat-kofi-popup-iframe {
+      left: unset !important;
+      right: 16px !important;
+    }
+  </style>
 
   <script>
     let currentIndex = 0;
