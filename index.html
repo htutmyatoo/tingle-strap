@@ -99,7 +99,7 @@
     /* ===== Hero ===== */
     header {
       position: relative;
-      padding: 180px 20px;
+      padding: 120px 20px 180px 20px;
       text-align: center;
       overflow: hidden;
       background: radial-gradient(circle at 50% 30%, #161b22, #0d1117 70%);
@@ -413,9 +413,9 @@
   <header class="reveal">
     <div class="container">
       <h1>Tingle Strap (2022)</h1>
+      <h3>Wearable 360° Proximity Intelligence System</h3>
       <p>
-        A wearable 360° IoT proximity awareness system engineered with Arduino and ultrasonic sensing.
-        Born during the pandemic. Designed for future spatial intelligence.
+        A compact wearable IoT prototype engineered with Arduino, PIR and Ultrasonic sensing to deliver real-time spatial awareness. Originally conceptualised during the global Covid19 pandemic, Tingle Strap evolved beyond health motivation into a broader exploration of wearable spatial intelligence, human-device interaction, and low-power embedded systems.
       </p>
 
       <a href="https://github.com/htutmyatoo/tingle-strap" class="btn btn-secondary">
@@ -423,11 +423,11 @@
       </a>
 
       <a href="#pricing" class="btn btn-primary">
-        Build your Peter Tingle
+        Build Tingle Strap Yourself
       </a>
     </div>
     <div class="scroll-indicator">
-      <span>Scroll</span>
+      <span>Scroll Down</span>
       <div class="mouse">
         <div class="wheel"></div>
       </div>
@@ -446,7 +446,8 @@
   <section id="simulation" class="simulation reveal">
     <div class="container">
       <h2>Live Firmware Simulation</h2>
-      <p>Interact with the embedded logic directly in your browser.</p>
+      <p>Experience the embedded logic directly in your browser.
+        Interact with the real firmware behaviour before building the hardware. No installation required, test the system instantly.</p>
       <br>
 
       <iframe src="https://wokwi.com/projects/456905613741503489/embed"></iframe>
@@ -456,13 +457,14 @@
   <!-- ===== Carousel ===== -->
   <section id="demo" class="reveal">
     <div class="container">
-      <h2>Engineering Walkthrough & Testing</h2>
-      <p>See how the firmware operates and how the wearable prototype performs in real-world testing.</p>
+      <h2>Prototype Testing & Engineering Walkthrough</h2>
+      <p>Explore how the firmware logic operates and observe the wearable prototype in real-world scenarios. See, sensor response behaviour, distance threshold logic, alert triggering mechanism, physical wearable performance.</p>
 
       <div class="carousel">
         <div class="slides">
           <iframe src="https://drive.google.com/file/d/1P587zRdmy67-6qMep9f_vdfuVsPOoSis/preview" allowfullscreen></iframe>
           <iframe src="https://drive.google.com/file/d/1fSf-MlVZdEnEsnGlV9jHX4hG-HUbMbXZ/preview" allowfullscreen></iframe>
+          <iframe src="https://drive.google.com/file/d/1m72Ry0LznxA6tZpSmx5dA9tErzNYQq-M/preview" allowfullscreen></iframe>
         </div>
 
         <button class="arrow left" onclick="prevSlide()">❮</button>
@@ -474,20 +476,29 @@
   <!-- ===== Pricing ===== -->
   <section id="pricing" class="pricing-section reveal">
     <div class="container">
-      <h2>Try Your Peter Tingle!!</h2>
-      <p>Select the bundle that matches your goal.</p>
+      <h2>Try Your Own Peter Tingle</h2>
+      <p>Choose the package that fits your goal. Curiosity isn’t meant to stay locked.</p>
 
       <div class="pricing-container reveal">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/PgwXy30OyjI?si=rY-IH_V7KmC_8PIE&amp;start=19" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <!-- Myanmar Note -->
+        <p style="font-size:0.9rem; color:#8b949e;">
+          If you are based in Myanmar 🇲🇲 and prefer local payment methods, please contact me directly via social media DMs for regional pricing.
+        </p>
+
         <div class="pricing-card">
           <h3>Community Edition</h3>
           <div class="price">Free</div>
           <ul class="feature-list">
-            <li>✔ Basic Firmware</li>
-            <li>✔ Wiring Guide</li>
-            <li>✔ Simulation Access</li>
-            <li>✔ Apache 2.0 License</li>
+            <li>✔ Basic 360° Firmware</li>
+            <li>✔ Wiring Reference Guide</li>
+            <li>✔ Browser Simulation Access</li>
+            <li>✔ Apache 2.0 Open-Source License</li>
           </ul>
+          <span style="display:block; font-size:0.85rem; color:#8b949e; margin-top:4px; margin-bottom:4px; padding-left:4px">
+            Ideal for makers and developers who want to explore the core system.
+          </span>
           <a href="https://github.com/htutmyatoo/tingle-strap" class="btn btn-secondary">Access on GitHub</a>
         </div>
 
@@ -495,28 +506,38 @@
           <h3>Builder Bundle</h3>
           <div class="price">£9</div>
           <ul class="feature-list">
-            <li>✔ Optimized Firmware</li>
-            <li>✔ Power Management</li>
-            <li>✔ Assembly Guide</li>
-            <li>✔ Detailed Schematics</li>
+            <li>✔ Optimised Firmware Architecture</li>
+            <li>✔ Improved Power Management</li>
+            <li>✔ Wearable Assembly Guide</li>
+            <li>✔ High-Resolution Schematics</li>
+            <li>✔ Troubleshooting & Implementation Notes</li>
           </ul>
-          <a href="https://ko-fi.com/yourlink" class="btn btn-primary">Get Builder Bundle</a>
+          <span style="display:block; font-size:0.85rem; color:#8b949e; margin-top:4px; margin-bottom:4px; padding-left:4px">
+            Designed for individuals who want a more customized and build-ready implementation for product development.
+          </span>
+          <a href="https://ko-fi.com/s/c92506b8b0" class="btn btn-primary">Get Builder Bundle</a>
         </div>
 
         <div class="pricing-card card-student">
-          <div class="most-popular">MOST POPULAR</div>
-          <h3>Student Academic Bundle</h3>
-          <div class="price">£15</div>
+          <div class="most-popular">MOST POPULAR (SAVE 35%)</div>
+          <h3>Learner Bundle</h3>
+          <div class="price">£19</div>
           <ul class="feature-list">
-            <li>✔ Everything in Builder</li>
-            <li>✔ Research Proposal</li>
-            <li>✔ Full Technical Report</li>
-            <li>✔ Research Paper Draft</li>
-            <li>✔ Presentation Template</li>
+            <li>✔ Everything in Builder Bundle</li>
+            <li>✔ Research Proposal Template (Editable)</li>
+            <li>✔ Full Technical Project Report</li>
+            <li>✔ Research Paper Draft Structure</li>
+            <li>✔ Presentation Slide Template</li>
+            <li>✔ Documentation Framework Guide</li>
           </ul>
-          <a href="https://ko-fi.com/yourlink" class="btn btn-primary">Get Student Bundle</a>
+          <span style="display:block; font-size:0.85rem; color:#8b949e; margin-top:4px; margin-bottom:4px; padding-left:4px">
+            Ideal for academic reference and structured project development.
+          </span>
+          <a href="https://ko-fi.com/s/f58c3d8adc" class="btn btn-primary">Get Learner Bundle</a>
         </div>
-
+        <p style="margin-top:10px; font-size:0.9rem; color:#6e7681;">
+          *Academic materials are provided as structural and technical references only. Users are responsible for maintaining academic integrity.
+        </p>
       </div>
     </div>
   </section>
@@ -524,8 +545,8 @@
   <!-- ===== Footer ===== -->
   <footer class="reveal">
     <div class="container">
-      <h2>Wearable IoT Course Waitlist</h2>
-      <p>Join the upcoming deep-dive course on wearable hardware and product-grade firmware architecture.</p>
+      <h2>Wearable IoT Course (Coming Soon)</h2>
+      <p>Join the waitlist for a structured deep-dive course covering, wearable hardware system design, multi-sensor integration, power optimisation strategies, embedded firmware architecture, product-level IoT thinking. Be the first to access early pricing and launch updates.</p>
 
       <a href="#" onclick="openForm()" class="btn btn-primary">Join the Waitlist</a>
 
@@ -572,6 +593,7 @@
     </div>
   </div>
 
+  <!-- Ko-fi Floating Button Script -->
   <script type="text/javascript" src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script>
   <script type="text/javascript">
     kofiwidget2.init('Buy me a Shawarma', '#ff5f5f', 'J3J21UINNT');
@@ -605,7 +627,7 @@
     function startAutoSlide() {
       slideInterval = setInterval(() => {
         nextSlide();
-      }, 6000);
+      }, 15000);
     }
 
     function stopAutoSlide() {
@@ -622,6 +644,7 @@
       document.getElementById("formModal").style.display = "none";
     }
     initCarousel();
+    
     // ===== Scroll Reveal =====
     const revealElements = document.querySelectorAll(".reveal");
 
@@ -636,12 +659,15 @@
     }
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll();
+    
     // ===== Parallax Hero =====
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
       const hero = document.querySelector("header");
       hero.style.backgroundPositionY = scrollY * 0.8 + "px";
     });
+
+    // ===== Copyright Year Auto Change =====
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
