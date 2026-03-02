@@ -23,7 +23,7 @@
 
 ## 📌 Overview
 
-Tingle Strap is a wearable chest-mounted proximity awareness system designed to enhance spatial awareness in dynamic environments.
+[Tingle Strap](https://htutmyatoo.github.io/tingle-strap/) is a wearable chest-mounted proximity awareness system designed to enhance spatial awareness in dynamic environments.
 
 The concept originated during the COVID-19 pandemic, where maintaining safe physical distance became a global challenge. While inspired by that context, the system is not limited to health-related scenarios. It serves as a foundational wearable IoT prototype for real-time spatial monitoring applications.
 
@@ -67,7 +67,8 @@ The PIR sensor enhances environmental responsiveness and supports motion-based c
 - 4 × HC-SR04 Ultrasonic Sensors  
 - PIR Motion Sensor  
 - Piezo Buzzer  
-- Red LED  
+- Red LED
+- Blue LED 
 - Green LED  
 - Resistors  
 - Breadboard / Custom Mount  
@@ -166,14 +167,14 @@ This prototype serves as a foundation for further wearable IoT development. Plan
 - 3D printed ergonomic enclosure
 - Sensor fusion refinement for interference reduction
 
-## Support
-<a href="https://ko-fi.com/J3J21UINNT" target="_blank">
-  <img src="https://storage.ko-fi.com/cdn/brandasset/v2/support_me_on_kofi_dark.png?_gl=1*mz6i7q*_gcl_au*MTE3MDY3MDM4NC4xNzcxNDUyMzcx*_ga*MTY2NTkxNjMxNy4xNzcxNDUyMzcy*_ga_M13FZ7VQ2C*czE3NzI0NTgwOTQkbzEyJGcxJHQxNzcyNDU4NDc4JGo1MSRsMCRoMA.." width = 200 alt="Ko-fi.com"/>
-</a>
-
 ## 📜 License
 
 Released under the Apache License 2.0.
 
 This repository contains the Community Edition firmware for educational, experimental, and non-commercial use.
 See the LICENSE file for details.
+
+## 🍥 Support
+<a href="https://ko-fi.com/J3J21UINNT" target="_blank">
+  <img src="https://storage.ko-fi.com/cdn/brandasset/v2/support_me_on_kofi_dark.png?_gl=1*mz6i7q*_gcl_au*MTE3MDY3MDM4NC4xNzcxNDUyMzcx*_ga*MTY2NTkxNjMxNy4xNzcxNDUyMzcy*_ga_M13FZ7VQ2C*czE3NzI0NTgwOTQkbzEyJGcxJHQxNzcyNDU4NDc4JGo1MSRsMCRoMA.." width = 200 alt="Ko-fi.com"/>
+</a>
