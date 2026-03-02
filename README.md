@@ -142,21 +142,15 @@ git clone https://github.com/your-username/tingle-strap.git
 ## 📂 Repository Structure
 ```
 tingle-strap/
-│
-├── firmware/
-│   └── tingle_strap_basic.ino
-│
-├── docs/
-│   ├── circuit-diagram.png
-│   └── architecture-diagram.png
-│
-├── images/
-│   └── demo.gif
-│
-├── simulation/
-│   └── wokwi-project-link.txt
-│
-└── README.md
+├── .gitignore
+├── LICENSE
+├── README.md
+├── Tingle_Strap.ino
+├── assets/
+│   ├── hardware-architecture.png
+│   ├── simulation_demo.gif
+│   └── system-architecture-diagram.png
+└── index.html
 ```
 
 ## 🔮 Future Improvements
