@@ -8,11 +8,14 @@
 </p>
 
 <p align="center">
+  <a href="https://open.spotify.com/track/1DhRbox3xkceP64k3JeYfW?si=e9ba4db6fe5b43a5"><img src="https://img.shields.io/badge/Dev%20Soundtrack-Antisocial-1DB954?logo=spotify&logoColor=white)" /></a>
   <img src="https://img.shields.io/badge/Platform-Arduino-blue" />
   <img src="https://img.shields.io/badge/Category-IoT-green" />
   <img src="https://img.shields.io/badge/Type-Wearable-orange" />
-  <img src="https://img.shields.io/badge/License-Apache%202.0-blue" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=htutmyatoo.tingle-strap" />
+  <img src="https://img.shields.io/github/last-commit/htutmyatoo/tingle-strap" />
   <img src="https://img.shields.io/badge/Status-Prototype-lightgrey" />
+  <img src="https://img.shields.io/github/license/htutmyatoo/tingle-strap" />
 </p>
 
 <p align="center">
