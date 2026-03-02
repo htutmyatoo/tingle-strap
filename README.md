@@ -4,18 +4,17 @@
 
 <h1 align="center">Tingle Strap</h1>
 <p align="center">
-  <strong>360° Wearable IoT Proximity Awareness System</strong>
+  <strong>360° Wearable IoT Proximity Intelligence System</strong>
 </p>
 
 <p align="center">
-  <a href="https://open.spotify.com/track/1DhRbox3xkceP64k3JeYfW?si=e9ba4db6fe5b43a5"><img src="https://img.shields.io/badge/Dev%20Soundtrack-Antisocial-1DB954?logo=spotify&logoColor=white)" /></a>
+  <a href="https://open.spotify.com/track/1DhRbox3xkceP64k3JeYfW"><img src="https://img.shields.io/badge/Dev%20Soundtrack-Antisocial-purple?logo=spotify&logoColor=white)" /></a>
   <img src="https://img.shields.io/badge/Platform-Arduino-blue" />
-  <img src="https://img.shields.io/badge/Category-IoT-green" />
-  <img src="https://img.shields.io/badge/Type-Wearable-orange" />
+  <img src="https://img.shields.io/badge/Category-IoT-orange" />
+  <img src="https://img.shields.io/badge/Type-Wearable-yellow" />
   <img src="https://visitor-badge.laobi.icu/badge?page_id=htutmyatoo.tingle-strap" />
-  <img src="https://img.shields.io/github/last-commit/htutmyatoo/tingle-strap" />
-  <img src="https://img.shields.io/badge/Status-Prototype-lightgrey" />
-  <img src="https://img.shields.io/github/license/htutmyatoo/tingle-strap" />
+  <img src="https://img.shields.io/badge/Status-Prototype-red" />
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue" />
 </p>
 
 <p align="center">
@@ -130,7 +129,7 @@ Testing confirms consistent detection performance within the defined safety thre
 ### Steps
 
 ```bash
-git clone https://github.com/your-username/tingle-strap.git
+git clone https://github.com/htutmyatoo/tingle-strap.git
 ```
 
 1. Wire the hardware according to curcuit diagram 
@@ -166,6 +165,11 @@ This prototype serves as a foundation for further wearable IoT development. Plan
 - Compact PCB-based hardware design
 - 3D printed ergonomic enclosure
 - Sensor fusion refinement for interference reduction
+
+## Support
+<a href="https://ko-fi.com/J3J21UINNT" target="_blank">
+  <img src="https://storage.ko-fi.com/cdn/brandasset/v2/support_me_on_kofi_dark.png?_gl=1*mz6i7q*_gcl_au*MTE3MDY3MDM4NC4xNzcxNDUyMzcx*_ga*MTY2NTkxNjMxNy4xNzcxNDUyMzcy*_ga_M13FZ7VQ2C*czE3NzI0NTgwOTQkbzEyJGcxJHQxNzcyNDU4NDc4JGo1MSRsMCRoMA.." width = 200 alt="Ko-fi.com"/>
+</a>
 
 ## 📜 License
 
